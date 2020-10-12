@@ -5,6 +5,10 @@ let url = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/'
 let url1 = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/work'
 let url2 = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/wife'
 let url3 = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/food'
+let workIndex = 0;
+let wifeIndex = 0;
+let foodIndex = 0;
+
 
 let button1 = document.querySelector(".button1") 
 let text = document.querySelector(".text")
@@ -36,11 +40,17 @@ function activity(){
         console.log("it works", res);
         return res.json();
 })
-      .then(data=>{
-        console.log("it works", data);
-        text1.innerText = data[2];
-        
-      
+.then(data=>{
+  
+  console.log("it works", data);
+  text1.innerText = data[workIndex];
+  if(workIndex <= 4){
+    workIndex++
+  }
+  else{
+    workIndex = 0;
+  }
+
 })
 
 
@@ -57,11 +67,17 @@ function activity2(){
         console.log("it works", res);
         return res.json();
 })
-      .then(data=>{
-        console.log("yes it works", data);
-        text2.innerText = data[2];
-        
-      
+.then(data=>{
+  
+  console.log("it works", data);
+  text1.innerText = data[wifeIndex];
+  if(wifeIndex <= 4){
+    wifeIndex++
+  }
+  else{
+    wifeIndex = 0;
+  }
+
 })
 
 
@@ -78,11 +94,17 @@ function activity3(){
         console.log("it works", res);
         return res.json();
 })
-      .then(data=>{
-        console.log("yes it works", data);
-        text2.innerText = data[3];
-        
-      
+.then(data=>{
+  
+  console.log("it works", data);
+  text1.innerText = data[foodIndex];
+  if(foodIndex <= 4){
+    foodIndex++
+  }
+  else{
+    foodIndex = 0;
+  }
+
 })
 
 
